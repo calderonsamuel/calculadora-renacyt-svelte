@@ -1,5 +1,5 @@
 <script lang="ts">
-    import InputSelect from './components/InputSelect.svelte';
+    import InputSelect from "../components/InputSelect.svelte";
 
     let btnStyles = [
         "btn-primary",
