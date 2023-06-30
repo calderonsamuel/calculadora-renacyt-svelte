@@ -1,4 +1,6 @@
 name: deploy-gh-pages
+permissions:
+    contents: write
 
 on: 
     push:
