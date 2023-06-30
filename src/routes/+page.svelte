@@ -1,5 +1,4 @@
 <script lang="ts">
-    import 'bootstrap/dist/css/bootstrap.min.css';
     import InputSelect from './components/InputSelect.svelte';
 
     let btnStyles = [
