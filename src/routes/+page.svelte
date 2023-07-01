@@ -1,6 +1,7 @@
 <script lang="ts">
     import InputSelect from "../components/InputSelect.svelte";
     import AccordionItem from "../components/AccordionItem.svelte";
+    import Formacion from "../sections/Formacion.svelte";
 
     let selectors = [
         {
@@ -18,20 +19,10 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 col-12 bg-primary">
-            <div class="accordion" id="myAccordion">
-                
-                <AccordionItem parentId = "myAccordion" itemId="formacion" expanded={true}>
-                    <span slot="header">
-                        <i class="bi bi-bank"></i>
-                        Formación
-                    </span>
-                    <div  slot="body">
-                        {#each selectors as selector (selector.id)}
-                        <InputSelect id = {selector.id} label = {selector.label} options = {selector.options} />
-                        {/each}
-                    </div>
-                </AccordionItem>
+        <div class="col-md-4 col-12">
+            <div class="accordion mt-3" id="myAccordion">
+
+                <Formacion parentId="myAccordion" />
                 
                 <AccordionItem parentId = "myAccordion" itemId="produccion">
                     <span slot="header">
