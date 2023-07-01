@@ -5,7 +5,7 @@
     export let parentId: string;
 </script>
 
-<AccordionItem parentId = "myAccordion" itemId="formacion" expanded={true}>
+<AccordionItem {parentId} itemId="formacion" expanded={true}>
     <span slot="header">
         <i class="bi bi-bank"></i>
         Formación
