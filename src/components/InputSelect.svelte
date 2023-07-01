@@ -1,12 +1,29 @@
-<script>
-    // import 'bootstrap/dist/css/bootstrap.min.css';
+<script lang="ts">
+    import { onMount } from "svelte";
 
-    export let btnStyle = "btn-primary"
 
-    let clicks = 0;
-    const counter = () => {
-        clicks = clicks + 1
+    export let id = "select-input-id";
+    export let label = "";
+    export let options = [{value: "", label: ""}];
+
+    let selected = "";
+    
+    const updateSelected = () => {
+        const element = document.getElementById(id) as HTMLInputElement;
+        selected = element?.value;
     }
+
+    onMount(updateSelected)
+
+
+
 </script>
 
-<button class="btn {btnStyle}" on:click={counter}>Clicked {clicks} times</button>
+<div class="">
+    <label for="{id}" class="me-1">{label}</label>
+    <select {id} class="form-select me-2" aria-label="Default select example" on:change={updateSelected}>
+        {#each options as el}
+            <option value="{el.value}">{el.label}</option>
+        {/each}
+      </select>
+</div>
