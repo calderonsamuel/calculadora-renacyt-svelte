@@ -2,8 +2,8 @@
     export let id: string;
     export let label: string;
     export let value: number;
-    export let min: number;
-    export let max: number;
+    export let min = -Infinity;
+    export let max = Infinity;
     export let inputClass = "mb-3";
 </script>
 
@@ -16,5 +16,11 @@
       {min}
       {max}
     />
-    <label for={id}>{label}</label>
+    <label for={id} class="w-100">{label}</label>
   </div>
+
+<!-- <style>
+    .form-floating>label {
+        text-overflow: ellipsis;
+    }
+</style> -->

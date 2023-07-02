@@ -1,6 +1,7 @@
 <script lang="ts">
     import AccordionItem from "../components/AccordionItem.svelte";
     import Formacion from "../sections/Formacion.svelte";
+    import Produccion from "../sections/Produccion.svelte";
     import Asesoria from "../sections/Asesoria.svelte";
 
     import Puntajes from "../sections/Puntajes.svelte";
@@ -15,14 +16,8 @@
 
                 <Formacion parentId="myAccordion" />
                 
-                <AccordionItem parentId = "myAccordion" itemId="produccion">
-                    <span slot="header">
-                        <i class="bi bi-book"></i>
-                        Producción
-                    </span>
+                <Produccion parentId="myAccordion" />
 
-                </AccordionItem>
-                
                 <Asesoria parentId="myAccordion"/>
                 
             </div>
