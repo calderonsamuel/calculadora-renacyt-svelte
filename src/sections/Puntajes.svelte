@@ -1,5 +1,8 @@
 <script lang="ts">
-    import { asesoriaPregrado, asesoriaMaestria, asesoriaDoctorado } from "../lib/stores/SelectionStore";
+    import { 
+        formacionGrado,
+        asesoriaPregrado, asesoriaMaestria, asesoriaDoctorado 
+    } from "$lib/stores/SelectionStore";
     
     interface inputTypes {nm: string, val: number}
     
@@ -7,6 +10,7 @@
 
     $: {
         values = [
+            {nm: "Formación - grado académico", val: $formacionGrado},
             {nm: "Asesoria de pregrado", val: $asesoriaPregrado},
             {nm: "Asesoria de maestria", val: $asesoriaMaestria},
             {nm: "Asesoria de doctorado", val: $asesoriaDoctorado}
