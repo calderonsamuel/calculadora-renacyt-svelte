@@ -2,7 +2,10 @@
     import AccordionItem from "../components/AccordionItem.svelte";
     import InputNumber from "../components/InputNumber.svelte";
 
+    import { asesoriaPregrado, asesoriaMaestria, asesoriaDoctorado } from "../lib/stores/SelectionStore";
+
     export let parentId: string;
+
 </script>
 
 <AccordionItem {parentId} itemId="asesoria">
@@ -14,19 +17,19 @@
         <InputNumber 
             id="asesoria-pregrado"
             label="Bachiller o título profesional"
-            value={0}
+            bind:value={$asesoriaPregrado}
             min={0}
         />
         <InputNumber 
             id="asesoria-maestria"
             label="Magister"
-            value={0}
+            bind:value={$asesoriaMaestria}
             min={0}
-        />
-        <InputNumber 
+            />
+            <InputNumber 
             id="asesoria-doctorado"
             label="Doctor"
-            value={0}
+            bind:value={$asesoriaDoctorado}
             min={0}
         />
     </div>

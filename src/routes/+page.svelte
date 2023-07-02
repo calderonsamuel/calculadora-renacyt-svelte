@@ -1,8 +1,9 @@
 <script lang="ts">
-    import InputSelect from "../components/InputSelect.svelte";
     import AccordionItem from "../components/AccordionItem.svelte";
     import Formacion from "../sections/Formacion.svelte";
     import Asesoria from "../sections/Asesoria.svelte";
+
+    import Puntajes from "../sections/Puntajes.svelte";
 
 </script>
 
@@ -27,7 +28,7 @@
             </div>
         </div>
         <div class="col-md-8 col-12 bg-secondary">
-            
+            <Puntajes />
         </div>
     </div>
 </div>

@@ -12,7 +12,7 @@
       type="number"
       class="form-control"
       {id}
-      {value}
+      bind:value={value}
       {min}
       {max}
     />
