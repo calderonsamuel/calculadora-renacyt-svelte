@@ -2,18 +2,8 @@
     import InputSelect from "../components/InputSelect.svelte";
     import AccordionItem from "../components/AccordionItem.svelte";
     import Formacion from "../sections/Formacion.svelte";
+    import Asesoria from "../sections/Asesoria.svelte";
 
-    let selectors = [
-        {
-            id: "selector-1",
-            label: "my-selector",
-            options: [
-                {value: "1", label: "one"},
-                {value: "2", label: "two"},
-                {value: "3", label: "three"}
-            ]
-        }
-    ]
 </script>
 
 
@@ -32,13 +22,8 @@
 
                 </AccordionItem>
                 
-                <AccordionItem parentId = "myAccordion" itemId="asesoria">
-                    <span slot="header">
-                        <i class="bi bi-person-lines-fill"></i>
-                        Asesoría
-                    </span>
-
-                </AccordionItem>
+                <Asesoria parentId="myAccordion"/>
+                
             </div>
         </div>
         <div class="col-md-8 col-12 bg-secondary">
