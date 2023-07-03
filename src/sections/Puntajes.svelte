@@ -6,6 +6,8 @@
         produccionLibros, produccionCapitulos, produccionIndiceH,
         asesoriaPregrado, asesoriaMaestria, asesoriaDoctorado 
     } from "$lib/stores/SelectionStore";
+
+    import { onMount } from "svelte";
     
     interface inputTypes {nm: string, val: number}
     
@@ -29,8 +31,19 @@
             {nm: "Asesoria de doctorado", val: $asesoriaDoctorado}
         ]
     }
+
+    onMount(() => {
+        let TESTER = document.getElementById('tester');
+        Plotly.newPlot( TESTER, [{
+        x: [1, 2, 3, 4, 5],
+        y: [1, 2, 4, 8, 16] }], {
+        margin: { t: 0 } } );
+    })
+
 </script>
 
 {#each values as element}
     <div>{element.nm}: {element.val}</div>    
 {/each}
+
+<div id="tester" style="width:800px;height:400px;"></div>
