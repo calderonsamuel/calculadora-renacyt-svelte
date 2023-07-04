@@ -22,7 +22,7 @@
                 
             </div>
         </div>
-        <div class="col-md-8 col-12 bg-secondary">
+        <div class="col-md-8 col-12 p-3 bg-secondary">
             <Puntajes />
         </div>
     </div>

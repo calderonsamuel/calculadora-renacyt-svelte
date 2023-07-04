@@ -42,8 +42,8 @@
 
 </script>
 
-{#each values as element}
-    <div>{element.nm}: {element.val}</div>    
-{/each}
+<div id="tester" style="height:400px;"></div>
 
-<div id="tester" style="width:800px;height:400px;"></div>
+{#each values as element}
+    <div class="w-100">{element.nm}: {element.val}</div>    
+{/each}
