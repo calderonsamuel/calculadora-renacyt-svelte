@@ -34,16 +34,39 @@
 
     onMount(() => {
         let TESTER = document.getElementById('tester');
-        Plotly.newPlot( TESTER, [{
-        x: [1, 2, 3, 4, 5],
-        y: [1, 2, 4, 8, 16] }], {
-        margin: { t: 0 } } );
-    })
+
+        let data = [{
+            x: [1, 2, 3, 4, 5],
+            y: [1, 2, 4, 8, 16] 
+        }]
+
+        let layout = {
+            title: {
+                text: "plot",
+                xanchor: "center",
+                y: 0
+            },
+            margin: {
+                b: 100
+            }
+        } 
+        
+        let config = {
+            displayModeBar: false,
+            responsive: true,
+        }
+
+        Plotly.newPlot( TESTER, data, layout, config);
+
+        })
 
 </script>
 
-<div id="tester" style="height:400px;"></div>
+<div class="w-100" style="height: 500px;">
+    <div id="tester" class="w-100" style="height:400px;"></div>
+</div>
 
-{#each values as element}
+
+<!-- {#each values as element}
     <div class="w-100">{element.nm}: {element.val}</div>    
-{/each}
+{/each} -->
