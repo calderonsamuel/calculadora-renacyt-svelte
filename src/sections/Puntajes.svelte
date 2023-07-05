@@ -1,3 +1,7 @@
+<svelte:head>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+</svelte:head>
+
 <script lang="ts">
     import { onMount } from "svelte";
     import { 
@@ -32,42 +36,74 @@
         ]
     }
 
-    onMount(() => {
-        let TESTER = document.getElementById('tester');
-
-        let data = [{
-            x: [1, 2, 3, 4, 5],
-            y: [1, 2, 4, 8, 16] 
-        }]
-
-        let layout = {
-            // title: {
-            //     text: "plot",
-            //     xanchor: "center",
-            //     y: 0
-            // },
-            margin: {
-                b: 100
-            }
-        } 
-        
-        let config = {
-            displayModeBar: false,
-            responsive: true,
+    let makeTrace = (x: number, name: string) => {
+        return {
+            x: [x],
+            y: [''],
+            name: name,
+            orientation: 'h',
+            type: 'bar',
+            width: 0.25
         }
+    }
+    
+    let traceFormacion
+    let traceProduccion
+    let traceAsesoria
+    let data
+    
+    
+    
+    let layout = {
+        barmode: 'stack',
+        xaxis: {
+            title: {
+                text: "Puntaje calculado"
+            }
+        },
+        legend: {
+            orientation: "h",
+            y: 1.1,
+            traceorder: "normal"
+        }
+    } 
+    
+    let config = {
+        displayModeBar: false,
+        responsive: true
+    }
 
-        Plotly.newPlot(TESTER, data, layout, config);
+    $: {
+        traceFormacion = makeTrace($formacionGrado, "Formación")
+        traceProduccion = makeTrace(30, "Producción")
+        traceAsesoria = makeTrace(10, "Asesoría") 
+        
+        data = [traceFormacion, traceProduccion, traceAsesoria]
+    }
 
-        })
+    let plotDiv;
+    let Plot;
+    
+    onMount(() => {
+        plotDiv = document.getElementById('plotDiv');
+        Plotly.react(plotDiv, data, layout, config);
+    })
+
+    // $: {
+    //     Plotly.react(plotDiv, data, layout, config);
+    // }
 
 </script>
 
-<div class="w-100 row">
-    <div class="col-12 col-lg-6"></div>
-    <div id="tester" class="col-12 col-lg-6" style="height:400px;"></div>
+<div class="row">
+    <div class="col-12 col-lg-6">
+        {#each values as element}
+            <div class="w-100">{element.nm}: {element.val}</div>    
+        {/each}
+    </div>
+    <div class="col-12 col-lg-6">
+        <div id="plotDiv"></div>
+    </div>
 </div>
 
 
-<!-- {#each values as element}
-    <div class="w-100">{element.nm}: {element.val}</div>    
-{/each} -->
