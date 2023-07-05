@@ -11,7 +11,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 col-12">
+        <div class="col-md-6 col-lg-4 col-12">
             <div class="accordion mt-3" id="myAccordion">
 
                 <Formacion parentId="myAccordion" />
@@ -22,7 +22,7 @@
                 
             </div>
         </div>
-        <div class="col-md-8 col-12 p-3 bg-secondary">
+        <div class="col-md-6 col-lg-8 col-12 p-3 bg-secondary">
             <Puntajes />
         </div>
     </div>

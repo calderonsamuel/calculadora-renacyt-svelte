@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import { 
         formacionGrado,
         produccionQ1, produccionQ2, produccionQ3, produccionQ4, produccionConf,
@@ -7,7 +8,6 @@
         asesoriaPregrado, asesoriaMaestria, asesoriaDoctorado 
     } from "$lib/stores/SelectionStore";
 
-    import { onMount } from "svelte";
     
     interface inputTypes {nm: string, val: number}
     
@@ -41,11 +41,11 @@
         }]
 
         let layout = {
-            title: {
-                text: "plot",
-                xanchor: "center",
-                y: 0
-            },
+            // title: {
+            //     text: "plot",
+            //     xanchor: "center",
+            //     y: 0
+            // },
             margin: {
                 b: 100
             }
@@ -56,14 +56,15 @@
             responsive: true,
         }
 
-        Plotly.newPlot( TESTER, data, layout, config);
+        Plotly.newPlot(TESTER, data, layout, config);
 
         })
 
 </script>
 
-<div class="w-100" style="height: 500px;">
-    <div id="tester" class="w-100" style="height:400px;"></div>
+<div class="w-100 row">
+    <div class="col-12 col-lg-6"></div>
+    <div id="tester" class="col-12 col-lg-6" style="height:400px;"></div>
 </div>
 
 
