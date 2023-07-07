@@ -55,12 +55,19 @@
         xaxis: {
             title: {
                 text: "Puntaje calculado"
-            }
+            },
+            range: [0, 200],
+            tickvals: [0, 10, 25, 35, 50, 70, 100, 160, 200],
+            ticktext: ["0", "VII", "VI", "V", "IV", "III", "II", "I", "?"],
         },
         legend: {
             orientation: "h",
+            // x: 0.3,
             y: 1.1,
             traceorder: "normal"
+        },
+        margin: {
+            t: 0
         }
     } 
     
@@ -92,6 +99,8 @@
 
 </script>
 
+<Plotly  {data} {layout} {config}/>
+
 <div class="row">
     <div class="col-12 col-lg-6">
         {#each values as element}
@@ -99,7 +108,7 @@
         {/each}
     </div>
     <div class="col-12 col-lg-6">
-        <Plotly  {data} {layout} {config}/>
+        <!-- <Plotly  {data} {layout} {config}/> -->
     </div>
 </div>
 
