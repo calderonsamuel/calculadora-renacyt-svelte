@@ -1,9 +1,5 @@
-<svelte:head>
-    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
-</svelte:head>
-
 <script lang="ts">
-    import { onMount } from "svelte";
+    import Plotly from "$lib/Plotly.svelte";
     import { 
         formacionGrado,
         produccionQ1, produccionQ2, produccionQ3, produccionQ4, produccionConf,
@@ -50,7 +46,7 @@
     let traceFormacion
     let traceProduccion
     let traceAsesoria
-    let data
+    let data: Record<string, any>[]
     
     
     
@@ -74,24 +70,25 @@
     }
 
     $: {
-        traceFormacion = makeTrace($formacionGrado, "Formación")
-        traceProduccion = makeTrace(30, "Producción")
-        traceAsesoria = makeTrace(10, "Asesoría") 
+
+        let puntajeGrado = $formacionGrado
+
+        let puntajeArticulos = ($produccionQ1*5) + ($produccionQ2*4) + ($produccionQ3*3) + ($produccionQ4*2)
+        let puntajeConference = $produccionConf > 10 ? 10 : $produccionConf
+        let puntajePatentes = ($produccionPatenteInvencion*3) + ($produccionPatenteModelo)
+        let sumaLibros = ($produccionLibros * 2) + ($produccionCapitulos)
+        let puntajeLibros = sumaLibros > 10 ? 10 : sumaLibros
+        let puntajeProduccion = puntajeArticulos + puntajeConference + puntajePatentes + puntajeLibros
+
+        let sumaAsesoria = ($asesoriaPregrado * 0.5) + ($asesoriaMaestria * 1) + ($asesoriaDoctorado * 2)
+        let puntajeAsesoria = sumaAsesoria > 10 ? 10 : sumaAsesoria
+
+        traceFormacion = makeTrace(puntajeGrado, "Formación")
+        traceProduccion = makeTrace(puntajeProduccion, "Producción")
+        traceAsesoria = makeTrace(puntajeAsesoria, "Asesoría") 
         
         data = [traceFormacion, traceProduccion, traceAsesoria]
     }
-
-    let plotDiv;
-    let Plot;
-    
-    onMount(() => {
-        plotDiv = document.getElementById('plotDiv');
-        Plotly.react(plotDiv, data, layout, config);
-    })
-
-    // $: {
-    //     Plotly.react(plotDiv, data, layout, config);
-    // }
 
 </script>
 
@@ -102,7 +99,7 @@
         {/each}
     </div>
     <div class="col-12 col-lg-6">
-        <div id="plotDiv"></div>
+        <Plotly  {data} {layout} {config}/>
     </div>
 </div>
 
