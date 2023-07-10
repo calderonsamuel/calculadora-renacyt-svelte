@@ -25,3 +25,17 @@
       </div>
     </div>
   </div>
+
+  <style>
+    .accordion-body {
+        background-color: #f8ffff;
+    }
+
+    /* .accordion-button {
+        background-color: aqua;
+    }
+
+    .accordion-button:active {
+        background-color: aquamarine;
+    } */
+  </style>

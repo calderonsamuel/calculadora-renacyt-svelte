@@ -101,15 +101,14 @@
 
 <Plotly  {data} {layout} {config}/>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-12 col-lg-6">
         {#each values as element}
             <div class="w-100">{element.nm}: {element.val}</div>    
         {/each}
     </div>
     <div class="col-12 col-lg-6">
-        <!-- <Plotly  {data} {layout} {config}/> -->
     </div>
-</div>
+</div> -->
 
 
