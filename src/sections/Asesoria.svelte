@@ -14,21 +14,22 @@
         Asesoría
     </span>
     <div slot="body">
+        <h6>F. Haber asesorado o co-asesorado tesis sustentadas y aprobadas</h6>
         <InputNumber 
             id="asesoria-pregrado"
-            label="Bachiller o título profesional"
+            label="Bachiller o título profesional-0.5pt"
             bind:value={$asesoriaPregrado}
             min={0}
         />
         <InputNumber 
             id="asesoria-maestria"
-            label="Magister"
+            label="Magister-1pt"
             bind:value={$asesoriaMaestria}
             min={0}
             />
             <InputNumber 
             id="asesoria-doctorado"
-            label="Doctor"
+            label="Doctor-2pt"
             bind:value={$asesoriaDoctorado}
             min={0}
         />

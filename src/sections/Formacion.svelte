@@ -16,12 +16,12 @@
             id = "grado-academico" 
             label = "A. Grado académico (registrado en SUNEDU o MINEDU)" 
             options = {[
-                {value: 0, label: "Ninguno"},
-                {value: 1, label: "Estudiante matriculado"},
-                {value: 2, label: "Bachiller o egresado"},
-                {value: 4, label: "Título profesional"},
-                {value: 6, label: "Magister"},
-                {value: 10, label: "Doctor"}
+                {value: 0, label: "Ninguno-0pts"},
+                {value: 1, label: "Estudiante matriculado-1pt"},
+                {value: 2, label: "Bachiller o egresado-2pts"},
+                {value: 4, label: "Título profesional-4pts"},
+                {value: 6, label: "Magister-6 pts"},
+                {value: 10, label: "Doctor-10 pts"}
             ]} 
             bind:selected = {$formacionGrado}
         />

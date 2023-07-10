@@ -23,28 +23,28 @@
         <div class="row mt-1 px-2">
             <InputNumber 
                 id="produccion-q1"
-                label="Q1"
+                label="Q1-5pt"
                 bind:value={$produccionQ1}
                 min={0}
                 inputClass="col px-1"
             />
             <InputNumber 
                 id="produccion-q2"
-                label="Q1"
+                label="Q2-4pt"
                 bind:value={$produccionQ2}
                 min={0}
                 inputClass="col px-1"
             />
             <InputNumber 
-                id="produccion-q2"
-                label="Q3"
+                id="produccion-q3"
+                label="Q3-3pt"
                 bind:value={$produccionQ3}
                 min={0}
                 inputClass="col px-1"
             />
             <InputNumber 
-                id="produccion-q2"
-                label="Q4"
+                id="produccion-q4"
+                label="Q4-2pt"
                 bind:value={$produccionQ4}
                 min={0}
                 inputClass="col px-1"
@@ -53,7 +53,7 @@
         <p class="mt-3">Conference Proceeding (Scopus o WoS)/Scielo</p>
         <InputNumber 
             id="produccion-conference"
-            label="Nº"
+            label="Nº-1pt"
             bind:value={$produccionConf}
             min={0}
         />
@@ -61,7 +61,7 @@
         <h6 class="mt-3">C. Registros de propiedad intelectual, concedidas y registradas en INDECOPI, SCOPUS u otras</h6>
         <InputNumber 
             id="produccion-pat-inv"
-            label="Patente de invención o Certificado de Obtentor o Paquete Tecnológico"
+            label="Patente de invención o Certificado de Obtentor o Paquete Tecnológico-3pt"
             bind:value={$produccionPatenteInvencion}
             min={0}
         />
@@ -69,7 +69,7 @@
             <div class="col">
                 <InputNumber 
                 id="produccion-pat-mod"
-                label="Patente de modelo de utilidad o certificado de derecho de autor por software"
+                label="Patente de modelo de utilidad o certificado de derecho de autor por software-1pt"
                 bind:value={$produccionPatenteModelo}
                 min={0}
                 />
@@ -79,13 +79,13 @@
         <h6>D. Publicaciones de libros y/o capítulos de libro indizados</h6>
         <InputNumber 
             id="produccion-libros"
-            label="Nº de libros"
+            label="Nº de libros-2pt"
             bind:value={$produccionLibros}
             min={0}
         />
         <InputNumber 
             id="produccion-capitulos"
-            label="Nº de capítulos de libro"
+            label="Nº de capítulos de libro-1pt"
             bind:value={$produccionCapitulos}
             min={0}
         />
