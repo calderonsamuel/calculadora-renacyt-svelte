@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{base}/">
+      <a class="navbar-brand fs-3" href="{base}/">
         <img src="{base}/logosvg.svg" alt="logo" width="30px" height="30px">
         Calculadora Renacyt
       </a>

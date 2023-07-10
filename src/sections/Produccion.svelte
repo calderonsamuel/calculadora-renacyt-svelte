@@ -13,7 +13,7 @@
 </script>
 
 <AccordionItem {parentId} itemId="produccion">
-    <span slot="header">
+    <span slot="header" class="fs-5">
         <i class="bi bi-book"></i>
         Producción
     </span>

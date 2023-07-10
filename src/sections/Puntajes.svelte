@@ -17,29 +17,24 @@
         ]
     }
 
-    let flyParams = { y: -50, duration: 500 }
+    let flyParams = { y: -30, duration: 500 }
 
 </script>
 
 <h3>Resultado</h3>
 
+<p transition:fly={flyParams} class="text-muted"><i class="bi bi-exclamation-square-fill text-warning pe-2"></i>Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC</p>
+
 {#if $puntajeTotal === 0}
     <p class="mb-1" transition:fly={flyParams}><i class="bi bi-info-square-fill text-info pe-2"></i>Ingresa tu información para actualizar el resultado en vivo</p>
+{:else}
+    {#each checks as check}
+        {#if !check.passes}
+            <p class="mb-1  text-danger" transition:fly={flyParams}><i class="bi bi-dash-square-fill pe-2"></i>No califica: {check.msg}</p>
+        {/if}
+    {/each}
 {/if}
 
-<p transition:fly={flyParams}><i class="bi bi-exclamation-square-fill text-warning pe-2"></i>Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC</p>
-
-{#each checks as check}
-    {#if !check.passes}
-        <p class="mb-1" transition:fly={flyParams}><i class="bi bi-dash-square-fill text-danger pe-2"></i>{check.msg}</p>
-    {/if}
-{/each}
-
-<!-- {#if puntajeTotal === 0}
-    <p in:fly={{ y: -50, duration: 500 }} out:fade={{duration: 250}}>Ingresa tu información para actualizar el resultado en vivo</p>
-{:else if puntajeProduccion === 0}
-    <p>No califica: Requiere al menos un item en producción</p>
-{/if} -->
 
 <ScorePlot/>
 

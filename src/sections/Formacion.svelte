@@ -7,7 +7,7 @@
 </script>
 
 <AccordionItem {parentId} itemId="formacion" expanded={true}>
-    <span slot="header">
+    <span slot="header" class="fs-5">
         <i class="bi bi-bank"></i>
         Formación
     </span>

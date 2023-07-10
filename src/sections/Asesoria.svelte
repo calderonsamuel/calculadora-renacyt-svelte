@@ -9,7 +9,7 @@
 </script>
 
 <AccordionItem {parentId} itemId="asesoria">
-    <span slot="header">
+    <span slot="header" class="fs-5">
         <i class="bi bi-person-lines-fill"></i>
         Asesoría
     </span>
