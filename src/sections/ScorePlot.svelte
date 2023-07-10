@@ -5,13 +5,24 @@
     } from "$lib/stores/SelectionStore";
 
     let makeTrace = (x: number, name: string) => {
+        let barFill = name == "Formación" ? "rgb(31, 119, 180)" : name == "Producción" ? "rgb(255, 127, 14)" : "rgb(44, 160, 44)"
         return {
             x: [x],
             y: [''],
-            name: name,
+            name: `${name} (${x} pts)`,
             orientation: 'h',
             type: 'bar',
-            width: 0.25
+            width: 0.25,
+            marker: {
+                color: barFill,
+                opacity: 0.5,
+                // line: {
+                //     color: 'rgb(8,48,107)',
+                //     opacity: 0.7,
+                //     width: 1.5
+                // }
+            },
+            hoverinfo: 'none',
         }
     }
     
