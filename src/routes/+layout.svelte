@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand fs-3" href="{base}/">
-        <img src="{base}/logosvg.svg" alt="logo" width="30px" height="30px">
+        <img src="logosvg.svg" alt="logo" width="30px" height="30px">
         Calculadora Renacyt
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
