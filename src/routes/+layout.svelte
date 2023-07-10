@@ -26,10 +26,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{base}/instructions">Instrucciones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{base}/about">About</a>
+            <a class="nav-link" href="{base}/about"><i class="bi bi-info-circle pe-1"></i>Info</a>
           </li>
         </ul>
       </div>
