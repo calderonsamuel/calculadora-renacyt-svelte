@@ -5,40 +5,48 @@
         puntajeFormacion, puntajeProduccion, puntajeAsesoria, puntajeTotal
     } from "$lib/stores/SelectionStore";
 
-    let makeTrace = (x: number, name: string) => {
+    const makeTrace = (x: number, name: string) => {
         let barFill = name == "Formación" ? "rgb(31, 119, 180)" : name == "Producción" ? "rgb(255, 127, 14)" : "rgb(44, 160, 44)"
         return {
             x: [x],
             y: [''],
-            name: `${name} (${x} pts)`,
+            name: `${name} (${x} pt${x == 1 ? '': 's'})`,   // 0pts, 1pt, 2pts, etc
             orientation: 'h',
             type: 'bar',
             width: 0.25,
             marker: {
                 color: barFill,
-                opacity: 0.5,
-                // line: {
-                //     color: 'rgb(8,48,107)',
-                //     opacity: 0.7,
-                //     width: 1.5
-                // }
+                opacity: 0.5
             },
             hoverinfo: 'none',
         }
     }
+
+    const computeRange = (x: number) => Math.ceil(x/25) * 25 + 10
     
-    let traceFormacion
-    let traceProduccion
-    let traceAsesoria
-    let data: Record<string, any>[]  
+    $: traceTotal = {
+        x: [$puntajeTotal + 1],
+        y: [''],
+        mode: 'text',
+        text: [`Total: ${$puntajeTotal} pt${$puntajeTotal == 1 ? '': 's'}`],
+        type: 'scatter',
+        showlegend: false
+    }
     
-    let layout = {
+    $: data = [
+        makeTrace($puntajeFormacion, "Formación"),
+        makeTrace($puntajeProduccion, "Producción"),
+        makeTrace($puntajeAsesoria, "Asesoría"),
+        traceTotal
+    ]
+    
+    $: layout = {
         barmode: 'stack',
         xaxis: {
             title: {
-                text: "Puntaje calculado"
+                text: "Nivel alcanzado"
             },
-            range: [0, 200],
+            range: [0, computeRange($puntajeTotal)],
             tickvals: [0, 10, 25, 35, 50, 70, 100, 160, 200],
             ticktext: ["0", "VII", "VI", "V", "IV", "III", "II", "I", "?"],
             fixedrange: true
@@ -62,14 +70,6 @@
     let config = {
         displayModeBar: false,
         responsive: true
-    }
-
-    $: {
-        traceFormacion = makeTrace($puntajeFormacion, "Formación")
-        traceProduccion = makeTrace($puntajeProduccion, "Producción")
-        traceAsesoria = makeTrace($puntajeAsesoria, "Asesoría") 
-        
-        data = [traceFormacion, traceProduccion, traceAsesoria]
     }
 
 </script>
