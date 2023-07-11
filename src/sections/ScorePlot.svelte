@@ -53,7 +53,9 @@
             traceorder: "normal"
         },
         margin: {
-            t: 0
+            t: 0,
+            l: 10,
+            r: 10
         }
     } 
     
