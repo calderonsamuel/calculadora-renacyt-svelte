@@ -41,6 +41,10 @@
             range: [0, 200],
             tickvals: [0, 10, 25, 35, 50, 70, 100, 160, 200],
             ticktext: ["0", "VII", "VI", "V", "IV", "III", "II", "I", "?"],
+            fixedrange: true
+        },
+        yaxis: {
+            fixedrange: true
         },
         legend: {
             orientation: "h",
