@@ -74,6 +74,6 @@
 
 {#if $puntajeTotal > 0}
 <div transition:slide>
-    <Plotly id="myPlot" {data} {layout} {config}/>
+    <Plotly {data} {layout} {config}/>
 </div>
 {/if}
