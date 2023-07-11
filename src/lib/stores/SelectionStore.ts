@@ -21,6 +21,10 @@ export const asesoriaDoctorado = writable(0)
 
 export const puntajeFormacion = derived(formacionGrado, ($formacionGrado) => $formacionGrado)
 
+export const sumaLibrosCapitulos = derived([produccionLibros, produccionCapitulos], ([$produccionLibros, $produccionCapitulos]) => {
+    return ($produccionLibros * 2) + ($produccionCapitulos)
+})
+
 export const puntajeProduccion = derived(
     [
         produccionQ1, produccionQ2, produccionQ3, produccionQ4, produccionConf,
@@ -29,7 +33,7 @@ export const puntajeProduccion = derived(
     ], ([
         $produccionQ1, $produccionQ2, $produccionQ3, $produccionQ4, $produccionConf,
         $produccionPatenteInvencion, $produccionPatenteModelo,
-        $produccionLibros, $produccionCapitulos, $produccionIndiceH
+        $produccionLibros, $produccionCapitulos
     ]) => {
         let puntajeArticulos = ($produccionQ1*5) + ($produccionQ2*4) + ($produccionQ3*3) + ($produccionQ4*2)
         let puntajeConference = $produccionConf > 10 ? 10 : $produccionConf        

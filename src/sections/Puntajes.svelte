@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fade, fly } from 'svelte/transition';
     import { 
-        puntajeFormacion, puntajeProduccion, produccionIndiceH, puntajeTotal
+        puntajeFormacion, puntajeProduccion, puntajeAsesoria, produccionIndiceH, puntajeTotal, sumaLibrosCapitulos, produccionConf
     } from "$lib/stores/SelectionStore";
     import ScorePlot from './ScorePlot.svelte';
     import AllScores from './AllScores.svelte';
@@ -37,6 +37,16 @@
         <p class="mb-1 text-success" transition:fly={flyParams}><i class="bi bi-check-square-fill pe-2"></i>¡FELICIDADES! Investigador distinguido</p>
         {/if}
     {/if}
+    {#if $sumaLibrosCapitulos >= 10}
+        <p class="mb-1 text-info" transition:fly={flyParams}><i class="bi bi-info-square-fill pe-2"></i>Libros y capítulos aportan un máximo de 10 pts.</p>
+    {/if}
+    {#if $puntajeAsesoria >= 10}
+        <p class="mb-1 text-info" transition:fly={flyParams}><i class="bi bi-info-square-fill pe-2"></i>Asesorías aportan un máximo de 10 pts.</p>
+    {/if}
+    {#if $produccionConf >= 10}
+    <p class="mb-1 text-info" transition:fly={flyParams}><i class="bi bi-info-square-fill pe-2"></i>Conference Proceedings aportan un máximo de 10 pts.</p>
+    {/if}
+
 {/if}
 
 
