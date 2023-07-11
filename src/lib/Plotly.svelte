@@ -51,6 +51,7 @@
 				updatePlot(node, data, layout, config, reloadPlot);
 			},
 			destroy() {
+				console.debug('plot destroyed')
 				node.removeListener('plotly_hover', onHover);
 				node.removeListener('plotly_unhover', onUnhover);
 				node.removeListener('plotly_click', onClick);

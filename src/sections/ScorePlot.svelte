@@ -1,5 +1,6 @@
 <script lang="ts">
     import Plotly from "$lib/Plotly.svelte";
+    import { slide } from "svelte/transition";
     import { 
         puntajeFormacion, puntajeProduccion, puntajeAsesoria, puntajeTotal
     } from "$lib/stores/SelectionStore";
@@ -67,4 +68,8 @@
 
 </script>
 
-<Plotly  {data} {layout} {config}/>
+{#if $puntajeTotal > 0}
+<div transition:slide>
+    <Plotly id="myPlot" {data} {layout} {config}/>
+</div>
+{/if}
