@@ -23,8 +23,6 @@
 
 <h3>Resultado</h3>
 
-<p transition:fly={flyParams} class="text-muted"><i class="bi bi-exclamation-square-fill text-warning pe-2"></i>Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC.</p>
-
 {#if $puntajeTotal === 0}
     <p class="mb-1" transition:fly={flyParams}><i class="bi bi-info-square-fill text-info pe-2"></i>Ingresa tu información para actualizar el resultado en vivo</p>
 {:else}
@@ -44,4 +42,30 @@
 
 <ScorePlot/>
 
+<div class="callout callout-warning row d-flex">
+    <div class="col-auto p-1">
+        <i class="bi bi-exclamation-square-fill text-warning fs-3"></i>
+    </div>
+    <div class="col align-self-center">
+        Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC.
+    </div>
+</div>
+
 <!-- <AllScores/> -->
+
+<style>
+    .callout {
+        padding: 1.25rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        border: 1px solid #e9ecef;
+        border-left-width: .25rem;
+        border-radius: .25rem;
+    }
+
+    .callout-warning {
+    border-left-color: #f0ad4e;
+}
+</style>
