@@ -1,3 +1,8 @@
+<script lang="ts">
+    import { base } from '$app/paths';
+    import Analytics from '$lib/Analytics.svelte';
+</script>
+
 <svelte:head>
     <title>Calculadora Renacyt</title>
     <meta name="description" content="Calculadora de puntajes RENACYT. Elaborada por Samuel Calderon usando SvelteKit.">
@@ -10,9 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </svelte:head>
 
-<script lang="ts">
-    import { base } from '$app/paths';
-</script>
+<Analytics />
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
