@@ -1,38 +1,13 @@
-# create-svelte
+# Calculadora RENACYT
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Una aplicación web que te permite calcular el puntaje que obtendrías de acuerdo a tu formación y producción profesional y académica de acuerdo a la normativa del Registro Nacional Científico, Tecnológico y de Innovación Tecnológica del CONCYTEC.
 
-## Creating a project
+## ¿Cómo usarla?
 
-If you're seeing this, you've probably already done this step. Congrats!
+Dirígite al siguiente enlace: <https://calculadorarenacyt.samuelenrique.com>, llena tu inforación y ve cómo se actualizan tus resultados en vivo.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Reportar errores o sugerencias
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Dirígete al siguiente enlace: <https://github.com/calderonsamuel/calculadora-renacyt-svelte/issues/new>, ponle un título a tu reporte e indica que problema o sugerencia quieres reportar. Haz click en "Submit new issue" para completar el proceso. Es necesario contar  con una cuenta Github para realizar el procedimiento.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Alternativamente, puedes encontrarme en Twitter como [@samucalse](https://twitter.com/samucalse) y enviarme un mensaje.
