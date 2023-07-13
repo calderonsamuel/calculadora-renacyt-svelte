@@ -57,7 +57,12 @@
         <i class="bi bi-exclamation-square-fill text-warning fs-3"></i>
     </div>
     <div class="col align-self-center">
-        Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC.
+        <p class="my-1">Recuerda que los resultados de esta calculadora no son vinculantes para CONCYTEC.</p>
+        <p class="my-1 text-muted">
+            Programada por <a class="text-muted" href="https://www.samuelenrique.com">Samuel Calderon Serrano</a> 
+            con base en la <a class="text-muted" href="https://servicio-renacyt.concytec.gob.pe/normativas/guia/">Normativa RENACYT</a>.
+            Reporta errores o sugerencias <a class="text-muted" href="https://github.com/calderonsamuel/calculadora-renacyt-svelte/issues">aquí</a>
+        </p>
     </div>
 </div>
 
